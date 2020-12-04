@@ -91,6 +91,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+
+                cb1.setChecked(false);
+                cb2.setChecked(false);
+                cb3.setChecked(false);
+
+                coffeeprice = 0;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+
                 String drinkName = parent.getItemAtPosition(position).toString();
                 Toast.makeText(parent.getContext(), "Selected: " + drinkName, Toast.LENGTH_LONG).show();
 
@@ -229,6 +237,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 coffeeprice -= 0.25;
             ettamt.setText(String.format("%.2f",coffeeprice));
         }
+
+        if(compoundButton.getId()==R.id.rbsmall){
+            if(rb1.isSelected()) {
+                coffeesize = 0;
+                double p1 = Double.parseDouble(ettamt.getText().toString());
+                coffeeprice = p1 * coffeesize;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+            else {
+                coffeesize = 0;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+        }
+
+        if(compoundButton.getId()==R.id.rbmed){
+            if(rb2.isSelected()) {
+                coffeesize = 0;
+                double p2 = Double.parseDouble(ettamt.getText().toString());
+                coffeeprice = p2 * coffeesize;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+            else {
+                coffeesize = 0;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+        }
+
+        if(compoundButton.getId()==R.id.rbextra){
+            if(rb3.isSelected()) {
+                coffeesize = 0;
+                double p3 = Double.parseDouble(ettamt.getText().toString());
+                coffeeprice = p3 * coffeesize;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+            else {
+                coffeesize = 0;
+                ettamt.setText(String.format("%.2f", coffeeprice));
+            }
+        }
+
 
     }
 
