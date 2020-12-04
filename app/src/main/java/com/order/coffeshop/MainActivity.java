@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
+                double qty = Double.parseDouble(etqty.getText().toString());
                 subtotal = Double.parseDouble(ettamt.getText().toString());
+                subtotal = subtotal * qty;
                 subtotal += tax;
                 etfamt.setText(String.format("%.2f", subtotal));
             }
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rb1 = findViewById(R.id.rbsmall);
         rb2 = findViewById(R.id.rbmed);
         rb3 = findViewById(R.id.rbextra);
-
 
         rb1.setOnClickListener(this);
         rb2.setOnClickListener(this);
